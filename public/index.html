@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>TACTICAL ARENA</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="login" class="screen">
+  <div class="card"><div class="brand">TACTICAL <b>ARENA</b></div><p>WEB FPS • MULTIPLAYER</p>
+  <input id="playerName" maxlength="16" placeholder="ตั้งชื่อผู้เล่น (3–16 ตัวอักษร)">
+  <button id="playBtn">เข้าสู่สนามรบ</button>
+  <button class="sub" id="adminOpen">เข้าสู่ระบบแอดมิน</button>
+  <small id="loginError"></small></div>
+</div>
+<div id="adminLogin" class="modal hidden"><div class="card"><h2>ADMIN LOGIN</h2><input id="adminUser" placeholder="Username"><input id="adminPass" type="password" placeholder="Password"><button id="adminLoginBtn">เข้าสู่ระบบ</button><button class="sub" id="adminCancel">ยกเลิก</button><small id="adminError"></small></div></div>
+<div id="game" class="hidden">
+  <div id="hud"><div><b>TACTICAL ARENA</b><span id="playerLabel"></span></div><div>HP <b id="hp">100</b>　K <b id="kills">0</b> / D <b id="deaths">0</b></div><button id="adminToggle" class="hidden">ADMIN PANEL</button></div>
+  <canvas id="gameCanvas"></canvas><div id="crosshair">+</div><div id="feed"></div>
+  <div id="controls"><div class="move"><button data-move="forward">▲</button><div><button data-move="left">◀</button><button data-move="back">▼</button><button data-move="right">▶</button></div></div><button id="fire">FIRE</button><button id="jump">JUMP</button></div>
+  <div id="adminPanel" class="hidden"><h3>ADMIN CONTROL</h3><button id="closeAdmin">ปิดแผง</button><div id="adminPlayers"></div><hr><input id="newWeapon" placeholder="ชื่อปืนใหม่"><button id="addWeapon">เพิ่มปืน</button><p class="hint">เลือกผู้เล่นแล้วใช้คำสั่ง: แจกปืน / ฮีล / วาร์ปไปหา / เตะ / แบน</p></div>
+  <div id="rotate">กรุณาหมุนจอเป็นแนวนอนเพื่อเล่น</div>
+</div>
+<script src="/socket.io/socket.io.js"></script><script type="module" src="game.js"></script>
+</body></html>
